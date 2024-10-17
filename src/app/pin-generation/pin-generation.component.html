@@ -1,0 +1,18 @@
+<div class="container mt-5" style="background: linear-gradient(135deg, #082bc4, #759407); min-height: 50vh; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color: white; border-radius: 8px; padding: 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px;">
+      <h2 class="text-center mb-4" style="font-family: Arial, sans-serif; color: #333;">Generate PIN</h2>
+      
+      <div class="text-center mb-4">
+        <button class="btn btn-primary" (click)="generatePin()" style="width: 100%; border-radius: 5px;">Generate New PIN</button>
+      </div>
+  
+      <div *ngIf="isPinGenerated" class="alert alert-success text-center">
+        <strong>Your PIN: {{ generatedPin }}</strong>
+      </div>
+  
+      <div class="text-center">
+        <button class="btn btn-success" [disabled]="!isPinGenerated" (click)="submitPin()" style="width: 100%; border-radius: 5px;">Submit PIN</button>
+      </div>
+    </div>
+  </div>
+  

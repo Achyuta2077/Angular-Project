@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h2>MFA Verification</h2>
+    <p>A verification code has been sent to your registered mobile number/email. Please enter it below:</p>
+  
+    <div class="form-group">
+      <label for="verificationCode">Verification Code</label>
+      <input type="text" class="form-control" id="verificationCode" [(ngModel)]="verificationCode" required>
+    </div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+    <button class="btn btn-primary" (click)="verifyCode()">Verify Code</button>
+  </div>
+  

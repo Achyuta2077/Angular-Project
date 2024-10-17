@@ -1,0 +1,38 @@
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #002b5c, #e26a07);"> <!-- HDFC Colors -->
+    <div style="width: 400px; height: 600px; background-color: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="assets/Reg.png" alt="HDFC Bank Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
+        <h2 style="margin-bottom: 30px; color: #333;">Register</h2>
+        <form (ngSubmit)="onRegister()" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100%; margin-bottom: 20px;">
+                <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username</label>
+                <input type="text" id="username" [(ngModel)]="username" name="username" required 
+                       style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div style="width: 100%; margin-bottom: 20px;">
+                <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" required 
+                       style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div style="width: 100%; margin-bottom: 20px;">
+                <label for="confirmPassword" style="display: block; font-weight: bold; margin-bottom: 5px;">Confirm Password</label>
+                <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required 
+                       style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger" style="margin-bottom: 20px; color: red;">{{ errorMessage }}</div>
+            <div *ngIf="successMessage" class="alert alert-success" style="margin-bottom: 20px; color: green;">{{ successMessage }}</div>
+            <button type="submit" 
+                style="width: 100%; padding: 15px; margin-top: 20px; background-color: #002b5c; color: white; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0px 5px 10px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+                Register
+            </button>
+        </form>
+    </div>
+</body>
+</html>
